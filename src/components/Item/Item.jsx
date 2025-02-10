@@ -1,5 +1,5 @@
 import React from 'react'
-import "./item.css"
+import "./Item.css"
 import { DatePicker } from 'rsuite';
 import moment from 'moment';
 const Item = ({index,onDelete,onItemChange,id,name,item}) => {
