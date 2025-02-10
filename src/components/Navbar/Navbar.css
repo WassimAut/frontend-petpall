@@ -1,0 +1,133 @@
+
+@media (min-width:768px){
+    .container{width:750px}
+    }
+    
+/*medium*/
+    
+@media (min-width:992px){
+    .container{width:970px}
+    }
+    
+/*Large*/
+    
+@media (min-width:1200px){
+    .container{width:1170px}
+    }
+
+
+.navbar .container{
+        margin-left:auto;
+        margin-right:auto;
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+.navbar{
+    background-color: #fff;
+    border-bottom: 1px solid #eeeeee96;
+    box-shadow: 0 5px 12px #f5f5f5;
+}
+
+
+.navbar .content{
+    display:flex;
+    justify-content:space-between ;
+    align-items: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    position:relative;
+    min-height: 59px;
+}
+
+.navbar .content span{
+    display: block;
+    padding: 5px;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+.navbar .right{
+    display:flex;
+    justify-content: space-between;
+    gap:10px;
+    align-items: center;
+
+}
+
+.navbar .right svg.barcontrole{
+    display:none
+}
+
+.navbar .right ul{
+    display:flex;
+    align-items: center;
+    flex-direction:row ;
+    padding:10px;
+    list-style: none;
+    gap:10px;
+}
+
+.navbar .right ul a{
+    display:block;
+    width:100%;
+}
+
+.navbar .right ul li{
+    cursor:pointer;
+}
+
+.navbar .right ul li button{
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold
+}
+
+
+
+
+
+
+
+@media(max-width:550px){
+    .navbar .right svg.barcontrole{
+        display:block;
+    }
+
+    .navbar .right ul{
+        display:none;
+    }
+
+    .navbar .right ul.pop{
+        display:flex;
+        position:absolute;
+        flex-direction:column;
+        width:100%;
+        right:0;
+        background-color:#eee;
+        top:100%;
+    }
+
+    .navbar .right ul.pop li{
+        display: block;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid white;
+        font-weight: bold;
+    }
+
+    .navbar .right ul li button{
+        width: 100%;
+    }
+}
+
+
+
+
+
+

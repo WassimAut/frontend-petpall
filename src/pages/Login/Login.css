@@ -1,0 +1,110 @@
+.login .container{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:15px;
+    padding-right:15px;
+    }
+
+@media (min-width:768px){
+        .container{width:750px}
+        }
+        
+/*medium*/
+        
+@media (min-width:992px){
+        .container{width:970px}
+        }
+        
+ /*Large*/
+        
+@media (min-width:1200px){
+        .container{width:1170px}
+        }
+
+
+.login{
+    height:calc(100vh - 71px)
+}
+
+.login .content{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height:calc(100vh - 71px)
+}
+
+.login .content .form{
+    width: 70%;
+    background: #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login .form h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+
+.login .content .signfields{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login .signfields input{
+    padding: 15px 10px;
+    border-radius: 10px;
+    outline:none;
+    border: none;
+}
+
+.login .submit button{
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    font-size: 18px;
+    background:#fbbb42;
+    color:white;
+    cursor:pointer;
+    font-weight:600px
+}
+
+.login .signfield-controle{
+    font-size:18px;
+}
+
+.login .signfield-controle span{
+    cursor:pointer;
+    transition:0.6s
+}
+
+.login .signfield-controle span:hover{
+    border-bottom:1px solid 
+}
+
+
+@media(max-width:550px){
+    .login .content .form{
+        width:100%;
+    }
+}
+
+@media(min-width:992px){
+    .login .content .form{
+        width:50%;
+    }
+
+}
+
+
+
+
+

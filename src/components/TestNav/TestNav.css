@@ -1,0 +1,236 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.navbar .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px
+    }
+}
+
+/*medium*/
+
+@media (min-width:992px) {
+    .container {
+        width: 970px
+    }
+}
+
+/*Large*/
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+
+.navbar {
+    font-family: 'Roboto';
+    background-color: white;
+    padding: 5px 0px;
+    border-bottom: 1px solid #eeeeee96;
+    box-shadow: 0px 5px 12px whitesmoke;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .title {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #fbbb42;
+    padding: 3px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.navbar .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .content ul {
+
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+    gap: 5px;
+
+}
+
+.navbar .content ul li {
+    padding: 15px 10px;
+    display: block;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar .content ul li.login-mobile {
+    display: none;
+}
+
+
+.loginandcart {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.loginandcart button {
+    font-size: 18px;
+    outline: none;
+    font-weight: 500;
+    background-color: #fbbb42;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.loginandcart svg {
+    font-size: 23px;
+    cursor: pointer;
+    color: black;
+}
+
+.loginandcart svg.barcontrole {
+    display: none;
+}
+
+.loginandcart .shoppingcart {
+    position: relative;
+}
+
+.loginandcart .shoppingcart span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fbbb42;
+    color: white;
+    font-size: 15px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    transform: translate(+50%, -50%);
+
+}
+
+.dropbtn {
+    
+    color: white;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .neworder-notif{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    bottom: 100%;
+    left: 100%;
+    transform: translate(-83%, +50%);
+    border-radius: 50%;
+  }
+  
+  .dropdown-content {
+    overflow:hidden;
+    display: none;
+    border-radius:5px;
+    position: absolute;
+    top:100%;
+    right:0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+  
+
+
+
+
+@media(max-width:550px) {
+    .navbar .content {
+        min-height: 60px;
+    }
+
+    .navbar .content ul {
+        position: absolute;
+        top: calc(100% + 5px);
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        padding: 0;
+        background: #eee;
+        padding: 10px;
+        border-radius: 0px 0px 10px 10px;
+        z-index: -1;
+        display: none;
+    }
+
+    .navbar .content ul li.login-mobile {
+        display: block;
+        padding: 10px;
+        background-color: #fbbb42;
+        border-radius: 6px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: white;
+        text-align: center;
+    }
+
+    .navbar .content .pop {
+        z-index: 3;
+        display: flex;
+    }
+
+    .loginandcart svg.barcontrole {
+        display: block
+    }
+
+    .loginandcart button {
+        display: none;
+    }
+}
