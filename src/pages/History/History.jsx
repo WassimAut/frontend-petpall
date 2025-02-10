@@ -138,12 +138,20 @@ const History = () => {
 }
 
 const formatDate = (timestamp) => {
-  const date = new Date(timestamp);
+
+  /* const date = new Date(timestamp);
   const year = date.getFullYear();
   const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed, add 1
   const day = date.getDate().toString().padStart(2, '0'); // Pad with zero if needed
+  return `${year}-${month}-${day}`; */
+  
+  const date = new Date(Number(timestamp)); // Ensure it's a number
+  const year = date.getUTCFullYear();
+  const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // UTC month
+  const day = date.getUTCDate().toString().padStart(2, '0'); // UTC day
 
   return `${year}-${month}-${day}`;
+
 };
 
 const formatTime = (timestamp) => {
