@@ -12,7 +12,7 @@ const Item = ({index,onDelete,onItemChange,id,name,item}) => {
       };
   return (
     <div className='item'>
-     <span>distribution {index}</span>
+     <span>dist {index}</span>
     {<input type="datetime-local"  min={todaydate}  name={name} value={item.value} onChange={handleChange}/>}
     <button onClick={()=>{onDelete(id)}} >Supprimez</button>
 

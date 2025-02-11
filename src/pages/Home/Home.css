@@ -30,6 +30,7 @@
 }
 .landing .container .content h3{
     font-size: 32px;
+    text-align:center;
 }
 
 .landing .container .content > button{

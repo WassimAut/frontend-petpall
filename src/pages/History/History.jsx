@@ -3,9 +3,12 @@ import "./History.css"
 import Item from '../../components/Item/Item'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
+
 import Swal from 'sweetalert2';
 import moment from 'moment';
 const History = () => {
+  const navigate = useNavigate();
   let todaydate = moment().format('YYYY-MM-DD');
   let pastedate = moment(todaydate).subtract(7, 'days').format("YYYY-MM-DD")
   let [date, setDate] = useState({
@@ -46,7 +49,8 @@ const History = () => {
             confirmButtonText: "OK"
           }).then(() => {
             // Redirect after user acknowledges the alert
-            window.location.replace("/login");
+            //window.location.replace("/login");
+            navigate("/login");
           });
         }
         let itemResponseData = await itemResponse.json()
@@ -144,7 +148,7 @@ const formatDate = (timestamp) => {
   const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed, add 1
   const day = date.getDate().toString().padStart(2, '0'); // Pad with zero if needed
   return `${year}-${month}-${day}`; */
-  
+
   const date = new Date(Number(timestamp)); // Ensure it's a number
   const year = date.getUTCFullYear();
   const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // UTC month

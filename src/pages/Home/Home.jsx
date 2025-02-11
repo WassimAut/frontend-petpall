@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./Home.css"
 import Item from '../../components/Item/Item'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faFloppyDisk } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2';
 import mqtt from "mqtt";
+
 const Home = () => {
-    
+    const navigate = useNavigate();
     let [Distribution, setDistribution] = useState([]);
     let [counter, setCounter] = useState(0);
     const [brokerUrl, setBrokerUrl] = useState("wss://test.mosquitto.org:8081");
@@ -124,7 +126,8 @@ const Home = () => {
                 confirmButtonText: "OK"
             }).then(() => {
                 // Redirect after user acknowledges the alert
-                window.location.replace("/login");
+                //window.location.replace("/login");
+                navigate("/login");
             });
         }
         let data = await response.json()
@@ -144,7 +147,6 @@ const Home = () => {
                 text: "une erreur s'est produit lors de soumission au serveur!",
                 icon: "error"
             })
-
         }
 
 
