@@ -9,7 +9,8 @@ import mqtt from "mqtt";
 
 const Home = () => {
     const navigate = useNavigate();
-    let rescpacaity=200
+    let rescpacaity=200;
+    let grammeperrotation = 20;
     let [Distribution, setDistribution] = useState([]);
     let [counter, setCounter] = useState(0);
     const [brokerUrl, setBrokerUrl] = useState("wss://test.mosquitto.org:8081");
@@ -102,7 +103,7 @@ const Home = () => {
 
         const hasLargePortion = Distribution.some(obj => obj.portion > 200);
         const hasnegative = Distribution.some(obj => obj.portion <= 0);
-
+        const nonaccepted = Distribution.some(obj => obj.portion % 20 != 0);
         if (hasEmptyString) {
             console.log("At least one object contains an empty string value.");
             Swal.fire({
@@ -130,6 +131,16 @@ const Home = () => {
             Swal.fire({
                 title: "Données manquantes!",
                 text: `les valeur de portion ne doivent pas etre negatives ou égale à zero!`,
+                icon: "error"
+            })
+            return
+        }
+
+        if (nonaccepted) {
+            
+            Swal.fire({
+                title: "Données manquantes!",
+                text: `les valeur de portion  doivent etre multiple de ${grammeperrotation}!`,
                 icon: "error"
             })
             return

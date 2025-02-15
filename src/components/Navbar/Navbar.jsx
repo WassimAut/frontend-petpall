@@ -28,6 +28,7 @@ const Navbar = () => {
             <ul ref={Listref}>
               <Link to="/" style={{ textDecoration: 'none',color:"black" }}><li>Planifiez</li></Link>
               <Link to="history" style={{ textDecoration: 'none',color:"black" }}><li>Historique</li></Link>
+              <Link to="data" style={{ textDecoration: 'none',color:"black" }}><li>Data</li></Link>
               {/*<Link to="login" ><li><button>Login</button></li></Link>*/}
               {localStorage.getItem("auth-token") ? <li className="login-mobile" onClick={() => { localStorage.removeItem("auth-token"); window.location.replace("/") }}><button>Logout</button></li> : <Link style={{ textDecoration: 'none' }} to="login"><li className="login-mobile"><button>Login</button></li></Link>}
             </ul>
