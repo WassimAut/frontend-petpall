@@ -2,14 +2,18 @@ import React, { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import LiquidFillGauge from "react-liquid-gauge";
+import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
 import "./Humidity.css"
 import mqtt from "mqtt";
 const MQTT_BROKER = "wss://test.mosquitto.org:8081"; // 
 const MQTT_TOPIC_humidity = "d/testpub/humidity";
 const MQTT_TOPIC_reservoir = "d/testpub/reservoir";
 const HumidityCircle = () => {
+    const navigate = useNavigate();
     const [humidity, setHumidity] = useState(40); // Default value
     const [nivreservoir, setNivreserv] = useState(30);
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     useEffect(() => {
         const client = mqtt.connect(MQTT_BROKER);
 
@@ -45,6 +49,43 @@ const HumidityCircle = () => {
             client.end();
         };
     }, []);
+
+    useEffect(() => {
+        const checkAuth = async () => {
+          try {
+            let itemResponse = await fetch(`${API_BASE_URL}/CheckAuth`, {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+                'auth-token': `${localStorage.getItem("auth-token")}`,
+                "Content-Type": "application/json"
+              },
+    
+            });
+            
+            if (itemResponse.status === 401) {
+              console.log("this is before swalfire")
+              Swal.fire({
+                title: "Erreur!",
+                text: "Vous devez vous identifier au premier!",
+                icon: "error",
+                confirmButtonText: "OK"
+              }).then(() => {
+                // Redirect after user acknowledges the alert
+                //window.location.replace("/login");
+                navigate("/login");
+              });
+            }
+            
+    
+          }
+    
+          catch (err) {
+            console.log("Error loading the data", err)
+          }
+        }
+        checkAuth()
+      }, [])
 
     return (
         <>
