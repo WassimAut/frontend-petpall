@@ -120,6 +120,10 @@ const History = () => {
               <div className='details'>
                 <span className='date'>{formatDate(item.delivery_time)}</span>
                 <span className='hours'>{formatTime(item.delivery_time) }</span>
+                
+              </div>
+              <div className='portion'>
+                <span>{item.portion}g</span>
               </div>
             </div>
           ))}

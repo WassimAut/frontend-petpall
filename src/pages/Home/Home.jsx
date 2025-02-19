@@ -211,6 +211,10 @@ const Home = () => {
                     {Distribution.map((item, index) => (
                         <Item key={item.id} index={index + 1} onDelete={remove_distribution} name={item.name} id={item.id} onItemChange={handleChange} onPortionchange={HandelportionChanges} item={item} />
                     ))}
+                    {Distribution.length ==0 ?<div className="info">
+                        <span>Cliquez sur Ajouter une distribution</span> 
+                    </div> :""}
+                    
                     <div className='buttons'>
                         <button onClick={add_distribution}>Ajoutez une distribution <FontAwesomeIcon icon={faPlus} /></button>
                         <button onClick={Save}>Sauvegardez <FontAwesomeIcon icon={faFloppyDisk} /></button>

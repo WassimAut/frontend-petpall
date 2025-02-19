@@ -34,8 +34,8 @@ const Login = () => {
         else {
             console.log("else is here")
             Swal.fire({
-                title: "Invalid user data!",
-                text: "Please verify your information!",
+                title: "Données de l'utilisateur invalides!",
+                text: "Mots de passe ou Email incorrect!",
                 icon: "error"
             })
 

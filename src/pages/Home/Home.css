@@ -33,6 +33,19 @@
     text-align:center;
 }
 
+
+.landing .container .info{
+    height: 300px;
+    background-color: #e5e5e55c;
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #594c4c;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .landing .container .content > button{
     margin-top:20px;
 

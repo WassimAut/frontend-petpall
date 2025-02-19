@@ -21,3 +21,9 @@
     padding: 5px;
     border-radius: 5px;
 }
+
+@media(max-width:720px){
+    .item{
+        flex-direction:column;
+    }
+}
